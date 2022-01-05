@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: #234C24;
+  transition: 2s;
+  overflow: hidden;
+}
+
+#viewArea {
+  position:absolute;
+  width:1000px;
+  height:600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+#homepage {
+  position: absolute;
+  width: 1000px;
+  height: 600px;
+  top: 0;
+  left: 0;
+  background-color: #94EE92;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  box-shadow: 0 0 200px rgba(0,0,0,0.3) inset;
+  /*transform: translate(-50%, -50%);*/
+  transition: 2.5s;
+  z-index: 4;
+}
+
+.homepage-content {
+  width: 75%;
+  margin: auto;
+  text-align: center;
+  padding-top: 70px;
+}
+
+#titleImage {
+  position: absolute;
+  width: 736px;
+  height: 316px;
+  top: 135px;
+  left: 132px;
+}
+
+#playbutton {
+  background-color: #53A251;
+  border:none;
+  border-radius: 40px;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 100;
+  transition: 0.4s;
+  top: 363px;
+  left: 131px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 40px;
+  position: absolute;
+  z-index: 7;
+}
+
+#playbutton:hover {
+  color: white;
+  padding-right: 65px;
+  padding-left: 25px;
+}
+
+#playbutton span::after {
+  content: " »";
+  position: absolute;
+  right: -20px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+#playbutton:hover span:after {
+  right: 20px;
+  opacity: 1;
+}
+
+/*5 clouds on homepage*/
+/*animations*/
+@keyframes moveCloud {
+  0% {left: 1000px;}
+  100%{left:-500px;}
+}
+
+
+/*
+position
+*/
+#cloudT1 {
+  position: absolute;
+  top: 80px;
+  left: 278px;
+  animation-name: moveCloud;
+  animation-duration: 5s;
+  animation-delay: -2s;
+}
+
+#cloudT2 {
+  position: absolute;
+  top: 20px;
+  left: 687px;
+  animation-name: moveCloud;
+  animation-duration: 12s;
+  animation-delay: -1s;
+}
+
+#cloudT3 {
+  position: absolute;
+  top: 304px;
+  left: 30px;
+  animation-name: moveCloud;
+  animation-duration: 7s;
+  animation-delay: -0.1s;
+}
+
+#cloudT4 {
+  position: absolute;
+  top: 430px;
+  left: 360px;
+  animation-name: moveCloud;
+  animation-duration: 6s;
+  animation-delay: -4s;
+  z-index: 7;
+}
+
+#cloudT5 {
+  position: absolute;
+  top: 390px;
+  left: 767px;
+  animation-name: moveCloud;
+  animation-duration: 8s;
+  animation-delay: 0s;
+  z-index: 7;
+}
+
+.cloudsTitle {
+  width: 176px;
+  height: 124px;
+  opacity: 85%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.cloudsGoAway {
+  width: 176px;
+  height: 124px;
+  opacity: 85%;
+  animation-iteration-count: 1;
+  animation-duration: 0s;
+  animation-timing-function: linear;
+}
+

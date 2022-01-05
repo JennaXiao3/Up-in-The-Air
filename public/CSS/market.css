@@ -1,0 +1,513 @@
+.arrowButton {
+  position: absolute;
+  top: 190px;
+  background-color: #573838;
+  width: 50px;
+  height: 50px;
+  border-radius: 60px;
+  transition: 0.2s;
+}
+
+#leftMarketButton {
+  left: 10px;
+}
+
+#rightMarketButton {
+  right: 10px;
+}
+
+.arrowButton i{
+  color: #AB7474;
+  font-size: 30px;
+  transition: 0.2s;
+}
+
+#leftMarketButton i {
+  margin: 10px 0px 0px 13px;
+}
+
+#rightMarketButton i {
+  margin: 10px 0px 0px 17px;
+}
+
+.arrowButton:hover {
+  background-color: #CE9696;
+  cursor: pointer;
+}
+
+.arrowButton:hover i {
+  color: #573838;
+}
+
+#marketCarousel {
+  position: absolute;
+  width: 620px;
+  height: 100%;
+  left: 75px;
+  overflow: hidden;
+}
+
+.marketPage {
+  position: absolute;
+  width: 600px;
+  height: 250px;
+  top: 100px;
+  left: 10px;
+  transition: 1s;
+}
+
+.treeCard {
+  position: absolute;
+  width: 180px;
+  height: 260px;
+  top: 0px;
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+.treeCardInner {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/*.treeCard:hover .treeCardInner {
+  transform: rotateY(180deg);
+}*/
+
+.treeCardFront, .treeCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+}
+
+.treeCardFront {
+  background-color: #835757;
+  text-align: center;
+}
+
+.treeCardBack {
+  background-color: #F8D521;
+  transform: rotateY(180deg);
+}
+
+.treeCardFrontContent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.2s;
+  -webkit-backface-visibility: hidden;
+}
+
+.treeInfoButton {
+  position: absolute;
+  left:-5px;
+  top:-10px;
+  /*transition: 0.5s;*/
+  -webkit-backface-visibility: hidden;
+  transition: all .3s ease-in-out;
+}
+
+.treeInfoButton:hover {
+  transform: scale(1.2);
+}
+
+.treeInfoButton:hover {
+  cursor: pointer;
+}
+
+.treeChangeArrow {
+  position: absolute; 
+  right: 15px;
+  top: -10px;
+  visibility: hidden;
+}
+
+.treeCardBackButton {
+  position: absolute;
+  top:-10px;
+  left: -5px;
+  border-radius: 40px;
+  background-color: #835757;
+  width: 37px;
+  height: 37px;
+  transition: 0.5s;
+  transition: all .3s ease-in-out;
+}
+
+.treeCardBackButton:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.treeCardBackButton img {
+  position: absolute;
+  left: 9px;
+  top: 9px;
+}
+
+
+
+.treeCardBackBottom {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 130px;
+  background-color: #FFEE96;
+  border-radius: 0px 0px 16px 16px;
+}
+
+.treeMarketLabel {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  color: #CE9696;
+  margin: 0px;
+  -webkit-backface-visibility: hidden;
+}
+
+.treeMarketImage {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 60px;
+  -webkit-backface-visibility: hidden;
+}
+
+.treePriceBox {
+  position: absolute;
+  left: 20px;
+  top: 195px;
+  width: 140px;
+  height: 40px;
+  background-color: #6CE06A;
+  border-radius: 28px;
+  text-align: center;
+  transition: 0.2s;
+  padding: 0px;
+  -webkit-backface-visibility: hidden;
+  transition: all .3s ease-in-out;
+}
+
+.treePriceBox:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.disabledPriceBox {
+  position: absolute;
+  left: 20px;
+  top: 195px;
+  width: 140px;
+  height: 40px;
+  background-color: #6CE06A;
+  border-radius: 28px;
+  text-align: center;
+  transition: 0.2s;
+  opacity: 40%;
+  -webkit-backface-visibility: hidden;
+}
+
+
+.disabledPriceBox:hover {
+  opacity: 40%;
+  cursor: default;
+}
+
+
+.treePriceBoxCoin {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  width: 34px;
+  height: 34px;
+  /*background-image: url("Stuff/coin.svg");
+  background-size: cover;
+  background-color: #F8D521;*/
+  background-color: #835757;
+  border-radius: 100%;
+  box-shadow: 0px 0px 0px 5px #835757;
+  margin: 0px;
+}
+
+
+.treePriceText {
+  position: absolute;
+  color: #835757;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  margin: 0px;
+  top: 2px;
+  left: 60%;
+  transform: translateX(-60%);
+}
+
+
+.treeMarketLabelBack {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  color: #835757;;
+  margin: 0px;
+}
+
+.treeMarketTempsBack {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  margin: 0px;
+  color: #835757;
+}
+
+.weatherBubble {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FFEE96;
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+}
+
+.resilienceBubble {
+  position: absolute;
+  width: 15px;
+  height: 75px;
+  left: 15px;
+  top: 40px;
+  background-color: #FFFFFF;
+  border-radius: 40px;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.resilienceAmountBubble {
+  position: absolute;
+  bottom: 0px;
+  width: 15px;
+  background-color: #835757;
+}
+
+.resilience1 {
+  height: 15px;
+}
+
+.resilience2 {
+  height: 30px;
+}
+
+.resilience3 {
+  height: 45px;
+}
+
+.resilience4 {
+  height: 60px;
+}
+
+.resilience5 {
+  height: 75px;
+}
+
+#marketBuyContainer {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  left: 330px;
+  top: 170px;
+  background-color: #573838;
+  border-radius: 50px 50px 40px 40px;
+  text-align:center;
+  transition: 1s;
+}
+
+#marketBuyHeader {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background-color: #6CE06A;
+  border-radius: 40px 40px 0px 0px;
+  text-align: center;
+}
+
+#marketBuyTitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #1E6B1C;
+  margin: 28px 0px 0px 0px;
+}
+
+#buyQuestion {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  width: 240px;
+  color: #BB9191;
+  margin: 120px 50px 0px 50px;
+}
+
+#amountSelector {
+  position: absolute;
+  top: 195px;
+  left: 80px;
+  width: 180px;
+  height: 50px;
+  background-color: #D6FAD5;
+  border-radius: 40px;
+}
+
+.non-disabled {
+  position: absolute;
+  background-color: #6CE06A;
+  width: 50px;
+  height: 50px;
+  transition: 0.2s;
+}
+
+.non-disabled:hover {
+  cursor: pointer;
+  background-color: #5BC558;
+}
+
+.disabled {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transition: 0.2s;
+  background-color:#6CE06A;
+  opacity: 40%;
+}
+
+.disabled:hover {
+  cursor: default;
+}
+
+#amountMinus {
+  border-radius: 30px 0px 0px 30px;
+}
+
+#amountPlus {
+  border-radius: 0px 30px 30px 0px;
+  right: 0px;
+}
+
+
+
+#amountBuyingText {
+  position: absolute;
+  font-style: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 11px;
+  margin: 0px;
+  color: #573838;
+}
+
+.plus-minus {
+  position: absolute;
+  top: 17px;
+  left: 45%;
+  transform: translateX(-45%);
+}
+
+#buyButton {
+  position: absolute;
+  width: 105px;
+  height: 45px;
+  top: 270px;
+  left: 45px;
+  background-color: #6CE06A;
+  border-radius: 30px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+#buyButton:hover {
+  background-color: #A9FFA7;
+  cursor: pointer;
+}
+
+#buyButton p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 7px 0px 0px 0px;
+  color: #835959;
+}
+
+#cancelButton {
+  position: absolute;
+  width: 130px;
+  height: 45px;
+  top: 270px;
+  left: 165px;
+  background-color: #835959;
+  border-radius: 30px;
+  text-align: center;
+  transition: 0.2s;
+  opacity: 0.5;
+}
+
+#cancelButton p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 7px 0px 0px 0px;
+  color: #6CE06A;
+}
+
+.enabledCancel {
+  opacity: 1 !important;
+}
+
+.enabledCancel:hover {
+  background-color: #A76F6F !important;
+  cursor: pointer;
+}
+
+#whiteOverlay  {
+  position: absolute;
+  width: 1000px;
+  height: 600px;
+  background-color: white;
+  opacity: 0.5;
+  transition: 1s;
+}
+
+#whiteOverlay1 {
+  position: absolute;
+  width: 1000px;
+  height: 600px;
+  background-color: white;
+  opacity: 0.5;
+  transition: 1s;
+  z-index: 3;
+}
+
+.weatherBubble img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+

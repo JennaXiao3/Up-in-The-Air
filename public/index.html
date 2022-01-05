@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Up In The Air</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <link rel="stylesheet" type="text/css" href="CSS/title.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/game.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/market.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/map.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/weather.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/582c474923.js" crossorigin="anonymous"></script>
+    <script defer src="/__/firebase/8.3.3/firebase-app.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/odometer.css" />
+    <script type="text/javascript" src="JS/odometer.js"></script>
+    <link rel="shortcut icon" type="image/svg" href="Stuff/coin.svg"/>
+  </head>
+  <body>
+    <audio id = "backgroundmusic" src="Stuff/lofile.mp3" preload="auto" muted loop> Audio not supported
+    </audio>
+    
+    <div id="viewArea">
+      <div class="game" id="game">
+      
+        <!-- TREE ISLANDS -->
+        <div id="homescreen">
+
+          <!--tutorials-->
+          <img src="Stuff/tutorial1.svg" id="t1" class="tut"> 
+          
+          
+          <img src="Stuff/tutorial4.svg" id="t4" class="tut">
+          <img src="Stuff/tutorial5.svg" id="t5" class="tut">
+          <img src="Stuff/tutorial6.svg" id="t6" class="tut">
+          <img src="Stuff/tutorial7.svg" id="t7" class="tut">
+          <img src="Stuff/tutorial8.svg" id="t8" class="tut">
+          <img src="Stuff/tutorial9.svg" id="t9" class="tut">
+          <img src="Stuff/tutorial10.svg" id="t10" class="tut">
+          <img src="Stuff/tutorial11.svg" id="t11" class="tut">
+          <img src="Stuff/tutorial12.svg" id="t12" class="tut">
+          <img src="Stuff/tutorial13.svg" id="t13" class="tut">
+          <img src="Stuff/tutorial14.svg" id="t14" class="tut">
+
+          <button id="check14" class="tut" onclick="endTutorial()"><img src="Stuff/checkie.svg" id="check14img"></button>
+
+          <!--sell sell sell-->
+         
+            <img src="Stuff/sellPlz.svg" id="sell"/>
+            <button onclick="closeSellCircle()" id="doneSell"><img src="Stuff/checkie.svg"/></button>
+       
+          
+          <div style="position: absolute; top: 200px; left: 250px" class="treeIsland" id= "treeIsland1">
+            <svg height="75" width="100">
+              <polygon points="50,0 100,25 50,50 0, 25" style="fill:#6CE06A;";/>
+              <polygon points="0,25 0,50 50,75 50,50" style="fill:#573838;";/>
+              <polygon points="50,50 50,75 100,50 100,25" style="fill:#794646;";/>
+            </svg>
+            <image src="Stuff/Plants/plant20.svg"  height="80" class="plantOnIsland" id="plantOnIsland1"/>
+            <image height="26" class="islandChangeArrow" id="islandChangeArrow1" />
+          </div>
+          
+          <div style="position: absolute; top: 200px; left: 450px" class="treeIsland" id= "treeIsland2">
+            <svg height="75" width="100">
+              <polygon points="50,0 100,25 50,50 0, 25" style="fill:#6CE06A;";/>
+              <polygon points="0,25 0,50 50,75 50,50" style="fill:#573838;";/>
+              <polygon points="50,50 50,75 100,50 100,25" style="fill:#794646;";/>
+            </svg>
+            <image src="Stuff/Plants/plant21.svg" height="80" class="plantOnIsland" id="plantOnIsland2"/>
+            <image height="26" class="islandChangeArrow" id="islandChangeArrow2" />
+          </div>
+          
+          <div style="position: absolute; top: 200px; left: 650px" class="treeIsland" id= "treeIsland3">
+            <svg height="75" width="100">
+              <polygon points="50,0 100,25 50,50 0, 25" style="fill:#6CE06A;";/>
+              <polygon points="0,25 0,50 50,75 50,50" style="fill:#573838;";/>
+              <polygon points="50,50 50,75 100,50 100,25" style="fill:#794646;";/>
+            </svg>
+            <image src="Stuff/Plants/plant22.svg" height="80" class="plantOnIsland" id="plantOnIsland3"/>
+            <image height="26" class="islandChangeArrow" id="islandChangeArrow3" />
+          </div>
+
+          <div style="position: absolute; top: 300px; left: 150px" class="treeIsland" id= "treeIsland4">
+            <svg height="75" width="100">
+              <polygon points="50,0 100,25 50,50 0, 25" style="fill:#6CE06A;";/>
+              <polygon points="0,25 0,50 50,75 50,50" style="fill:#573838;";/>
+              <polygon points="50,50 50,75 100,50 100,25" style="fill:#794646;";/>
+            </svg>
+            <image src="Stuff/Plants/plant24.svg" height="80" class="plantOnIsland" id="plantOnIsland4"/>
+            <image height="26" class="islandChangeArrow" id="islandChangeArrow4" />
+          </div>
+
+          <div style="position: absolute; top: 300px; left: 350px" class="treeIsland" id= "treeIsland5">
+            <svg height="75" width="100" >
+              <polygon points="50,0 100,25 50,50 0, 25" style="fill:#6CE06A;";/>
+              <polygon points="0,25 0,50 50,75 50,50" style="fill:#573838;";/>
+              <polygon points="50,50 50,75 100,50 100,25" style="fill:#794646;";/>
+            </svg>
+            <image src="Stuff/Plants/plant3.svg" height="80" class="plantOnIsland" id="plantOnIsland5"/>
+            <image height="26" class="islandChangeArrow" id="islandChangeArrow5" />
+          </div>
+
+          <div style="position: absolute; top: 300px; left: 550px" class="treeIsland" id= "treeIsland6">
+            <svg height="75" width="100">
+              <polygon points="50,0 100,25 50,50 0, 25" style="fill:#6CE06A;";/>
+              <polygon points="0,25 0,50 50,75 50,50" style="fill:#573838;";/>
+              <polygon points="50,50 50,75 100,50 100,25" style="fill:#794646;";/>
+            </svg>
+            <image src="Stuff/Plants/plant7.svg" height="80" class="plantOnIsland" id="plantOnIsland6"/>
+            <image height="26" class="islandChangeArrow" id="islandChangeArrow6" />
+          </div>
+
+          <div style="position: absolute; top: 300px; left: 750px" class="treeIsland" id= "treeIsland7">
+            <svg height="75" width="100">
+              <polygon points="50,0 100,25 50,50 0, 25" style="fill:#6CE06A;";/>
+              <polygon points="0,25 0,50 50,75 50,50" style="fill:#573838;";/>
+              <polygon points="50,50 50,75 100,50 100,25" style="fill:#794646;";/>
+            </svg>
+            <image src="Stuff/Plants/plant8.svg" height="80" class="plantOnIsland" id="plantOnIsland7"/>
+            <image height="26" class="islandChangeArrow" id="islandChangeArrow7" />
+          </div>
+          
+
+          <!-- BUTTONS -->
+          <div id="buttonContainer">
+            <button id="weatherButton" class="mainButton" onclick="openWeather()"><img src="Stuff/weather.svg" width="30" height="30"/></button><!--oioi-->
+            <button id="marketButton" class="mainButton" onclick="openMarket()"><img src="Stuff/shop.svg" width="30" height="30"/></button>
+            <button id="analyticsButton" class="mainButton" onclick="openAnalytics()"><img src="Stuff/analytics.svg" width="30" height="30"/></button>
+          </div>
+          <button class="mainButton" onclick="openMap()" id="mapButton"><img src="Stuff/map.svg"/></button>
+          <button onclick="nextDay()" id="endTurnButton">END DAY</button>
+          <img src="Stuff/endDayWarning.svg" id="endHover"/>
+          
+          
+
+          <!-- MAIN PAGE WEATHER -->
+          <div id="weatherDiv">
+            <img src="Stuff/blue-sunny.svg" width="35" height="35" id="weatherDivIcon"/>
+            <p id="currentTemp">20°C</p>
+          </div>
+
+          <!--INFO BOX-->
+          <div id="infoBox">
+            <img src="Stuff/infoBox.svg">
+            <a href="https://docs.google.com/presentation/d/1Vq24epq6xDewyBdFMrIBys-u2b_MmMyP4xOvoozBl44/edit?usp=sharing" id="linkPP" target=”_blank”>All lessons can be found here.</a>
+            <button id="closeInfoBox" onclick="closeInfo()">CLOSE</button>
+          </div>
+          <!--
+          <div id="infoBox" src="Stuff/infoBox.svg" style="visibility: hidden">
+            <a href="https://docs.google.com/presentation/d/1RkLx77-ehy-khVzMFRHRK6Ctf1cuHMD5bjwaOEqSnaM/edit?usp=sharing" id="linkPP">All lessons can be found here.</a>
+            <button></button>
+          </div>-->
+        </div>    
+
+        <!-- CLOUDS IN HOMEPAGE-->
+        <img class="cloud" id="cloud1" src="Stuff/cloud.svg" width="115" height="80" style="position: absolute; top: 320px; left: -100%;"/>
+        <img class="cloud" id="cloud2" src="Stuff/cloud.svg" width="115" height="80" style="position: absolute; top: 90px; left: -100%;"/>
+        <img class="cloud" id="cloud3" src="Stuff/cloud.svg" width="115" height="80" style="position: absolute; top: 145px; left: 200%"/>
+        <img class="cloud" id="cloud4" src="Stuff/cloud.svg" width="115" height="80" style="position: absolute; top: 390px; left: 200%"/>
+
+        <!-- MARKET -->
+        <div class="centralContainer" id="marketContainer">
+          <div class="centralContainerHeader" id="marketHeader">
+            <p>MARKET</p>
+          </div>
+          <div class="arrowButton" id="leftMarketButton">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+          <div class="arrowButton" id="rightMarketButton">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <div id="marketCarousel">
+            <div class="marketPage">
+              <div class="treeCard" style="left:10px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront1">
+                      <img id="tree1InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel1">TREE 1</p>
+                      <img class="treeMarketImage" id="treeMarketImage1" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox1">
+                        
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText1"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow1" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree1BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack1"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack1"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble1"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble1"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph1" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:210px" id="treeCard2">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront2">
+                      <img id="tree2InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel2">TREE 2</p>
+                      <img class="treeMarketImage" id="treeMarketImage2" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox2">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText2"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow2" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree2BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack2"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack2"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble2"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble2"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph2" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:410px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront3">
+                      <img id="tree3InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel3">TREE 3</p>
+                      <img class="treeMarketImage" id="treeMarketImage3" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox3">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText3"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow3" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree3BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack3"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack3"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble3"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble3"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph3" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="marketPage" style="left: 630px;">
+              <div class="treeCard" style="left:10px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront4">
+                      <img id="tree4InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel4">TREE 4</p>
+                      <img class="treeMarketImage" id="treeMarketImage4" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox4">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText4"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow4" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree4BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack4"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack4"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble4"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble4"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph4" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:210px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront5">
+                      <img id="tree5InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel5">TREE 5</p>
+                      <img class="treeMarketImage" id="treeMarketImage5" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox5">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText5"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow5" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree5BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack5"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack5"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble5"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble5"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph5" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:410px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront6">
+                      <img id="tree6InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel6">TREE 6</p>
+                      <img class="treeMarketImage" id="treeMarketImage6" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox6">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText6"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow6" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree6BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack6"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack6"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble6"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble6"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph6" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="marketPage" style="left: 1250px;">
+              <div class="treeCard" style="left:10px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront7">
+                      <img id="tree7InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel7">TREE 7</p>
+                      <img class="treeMarketImage" id="treeMarketImage7" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox7">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText7"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow7" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree7BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack7"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack7"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble7"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble7"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph7" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:210px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront8">
+                      <img id="tree8InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel8">TREE 8</p>
+                      <img class="treeMarketImage" id="treeMarketImage8" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox8">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText8"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow8" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree8BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack8"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack8"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble8"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble8"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph8" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:410px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront9">
+                      <img id="tree9InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel9">TREE 9</p>
+                      <img class="treeMarketImage" id="treeMarketImage9" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox9">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText9"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow9" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree9BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack9"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack9"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble9"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble9"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph9" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="marketPage" style="left: 1870px;">
+              <div class="treeCard" style="left:10px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront10">
+                      <img id="tree10InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel10">TREE 10</p>
+                      <img class="treeMarketImage" id="treeMarketImage10" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox10">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText10"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow10" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree10BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack10"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack10"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble10"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble10"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph10" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:210px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront11">
+                      <img id="tree11InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel11">TREE 11</p>
+                      <img class="treeMarketImage" id="treeMarketImage11" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox11">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText11"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow11" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree11BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack11"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack11"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble11"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble11"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph11" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:410px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront12">
+                      <img id="tree12InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel12">TREE 12</p>
+                      <img class="treeMarketImage" id="treeMarketImage12" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox12">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText12"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow12" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree12BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack12"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack12"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble12"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble12"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph12" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="marketPage" style="left: 2490px;">
+              <div class="treeCard" style="left:10px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront13">
+                      <img id="tree13InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel13">TREE 13</p>
+                      <img class="treeMarketImage" id="treeMarketImage13" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox13">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText13"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow13" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree13BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack13"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack13"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble13"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble13"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph13" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:210px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront14">
+                      <img id="tree14InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel14">TREE 14</p>
+                      <img class="treeMarketImage" id="treeMarketImage14" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox14">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText14"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow14" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree14BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack14"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack14"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble14"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble14"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph14" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:410px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront15">
+                      <img id="tree15InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel15">TREE 15</p>
+                      <img class="treeMarketImage" id="treeMarketImage15" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox15">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText15"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow15" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree15BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack15"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack15"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble15"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble15"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph15" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="marketPage" style="left: 3110px;">
+              <div class="treeCard" style="left:10px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront16">
+                      <img id="tree16InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel16">TREE 16</p>
+                      <img class="treeMarketImage" id="treeMarketImage16" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox16">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText16"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow16" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree16BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack16"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack16"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble16"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble16"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph16" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:210px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront17">
+                      <img id="tree17InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel17">TREE 17</p>
+                      <img class="treeMarketImage" id="treeMarketImage17" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox17">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText17"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow17" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree17BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack17"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack17"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble17"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble17"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph17" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:410px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront18">
+                      <img id="tree18InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel18">TREE 18</p>
+                      <img class="treeMarketImage" id="treeMarketImage18" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox18">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText18"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow18" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree18BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack18"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack18"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble18"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble18"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph18" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="marketPage" style="left: 3730px;">
+              <div class="treeCard" style="left:10px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront19">
+                      <img id="tree19InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel19">TREE 19</p>
+                      <img class="treeMarketImage" id="treeMarketImage19" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox19">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText19"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow19" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree19BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack19"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack19"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble19"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble19"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph19" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:210px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront20">
+                      <img id="tree20InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel20">TREE 20</p>
+                      <img class="treeMarketImage" id="treeMarketImage20" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox20">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText20"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow20" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree20BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack20"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack20"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble20"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble20"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph20" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:410px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront21">
+                      <img id="tree21InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel21">TREE 21</p>
+                      <img class="treeMarketImage" id="treeMarketImage21" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox21">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText21"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow21" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree21BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack21"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack21"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble21"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble21"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph21" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="marketPage" style="left: 4350px;">
+              <div class="treeCard" style="left:10px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront22">
+                      <img id="tree22InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel22">TREE 22</p>
+                      <img class="treeMarketImage" id="treeMarketImage22" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox22">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText22"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow22" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree22BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack22"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack22"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble22"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble22"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph22" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:210px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront23">
+                      <img id="tree23InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel23">TREE 23</p>
+                      <img class="treeMarketImage" id="treeMarketImage23" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox23">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText23"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow23" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree23BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack23"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack23"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble23"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble23"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph23" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="treeCard" style="left:410px">
+                <div class="treeCardInner">
+                  <div class = "treeCardFront">
+                    <div class = "treeCardFrontContent" id = "treeCardFront24">
+                      <img id="tree24InfoButton" src="Stuff/treeInfo.svg" class="treeInfoButton" width="37" height="37"/>
+                      <p class="treeMarketLabel" id="treeMarketLabel24">TREE 24</p>
+                      <img class="treeMarketImage" id="treeMarketImage24" height="110"/>
+                      <div class="treePriceBox" id="treePriceBox24">
+                        <img src="Stuff/coin.svg" class="treePriceBoxCoin">
+                        <p class="treePriceText" id="treePriceText24"></p>
+                      </div>
+                      <img class="treeChangeArrow" id="treeChangeArrow24" width="26" height="26"/>
+                    </div>
+                  </div>
+                  <div class = "treeCardBack">
+                    <div id="tree24BackFlip" class='treeCardBackButton' width="37" height="37">
+                      <img src="Stuff/flipBack.svg" width="18" height="18"/>
+                    </div>
+                    <p class="treeMarketLabelBack" id="treeMarketLabelBack24"></p>
+                    <p class="treeMarketTempsBack" id="treeMarketTempsBack24"></p>
+                    <div class="weatherBubble">
+                      <img src="Stuff/brown-partly-cloudy.svg" height="30" width="30" id="weatherBubble24"/>
+                    </div>
+                    <div class="resilienceBubble">
+                      <div class="resilienceAmountBubble" id="resilienceBubble24"></div>
+                    </div>
+                    <div class="treeCardBackBottom">
+                      <canvas id="stockGraph24" width="160px" height="110px" style="position: absolute; left: 10px; top: 10px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="backButton" id="backButtonMarket" src="Stuff/backArrow.svg" width="83" height="83"/>
+        </div>
+
+        <!-- WHITE OVERLAY -->
+        <div id="whiteOverlay" style="visibility: hidden; opacity: 0;"></div>
+
+        <!-- MARKET BUY PROMPT -->
+        <div id="marketBuyContainer" style="visibility: hidden; opacity: 0;">
+          <div id="marketBuyHeader">
+            <p id="marketBuyTitle">TREE 1</p>
+          </div>
+          <p id="buyQuestion">HOW MANY WOULD YOU LIKE TO BUY?</p>
+          <div id="amountSelector">
+            <div id="amountMinus" class="disabled"><img src="Stuff/minus.svg" width="16" style="position: absolute; top: 25px; right: 45%; transform: translateX(45%);"/></div>
+            <p id="amountBuyingText">1</p>
+            <div id="amountPlus" class="non-disabled"><img src="Stuff/plus.svg" width="16" height="16" style="position: absolute; top: 17px; left: 45%; transform: translateX(-45%);"/></div>
+          </div>
+          <div id="buyButton"><p>BUY</p></div>
+          <div id="cancelButton" class="enabledCancel"><p>CANCEL</p></div>
+        </div>
+
+        <!-- DAY -->
+        <p id="day" style="position: absolute; top: 25px; font-size: 48px; width: 100%; font-weight: 100;text-align: center;">DAY 1</p>
+        
+                <!-- SOUND BUTTON -->
+        <button id = "musicButton" onclick="muteMusic()"><i class="fas fa-volume-up" id="soundimg"></i><i class="fas fa-volume-mute" id="muteimg"></i></button>
+
+        <!--INFO BOX-->
+        <!--<div>
+          <img id="infoBox" style="visibility: hidden" src="Stuff/infoBox.svg"/>
+          <a href="https://docs.google.com/presentation/d/1RkLx77-ehy-khVzMFRHRK6Ctf1cuHMD5bjwaOEqSnaM/edit?usp=sharing" id="linkPP">All lessons can be found here.</a>
+          <button id="closeInfoBox" onclick="closeInfo()">CLOSE</button>
+        </div>-->
+
+        <!--INFO BUTTON-->
+        <button id = "infoButton" onclick="openInfo()"><i class="fas fa-info" id="waterBottle"></i></button>
+
+        <!-- MONEY -->
+        <div id="moneyDiv">
+          <!--<div id="coin"></div>-->
+          <img src="Stuff/coin.svg" id="coin">
+          <p id="playerCoins" class="odometer"></p>
+        </div>
+
+        <div id="whiteOverlay1" style="visibility: hidden; opacity: 0;"></div>
+
+        <!-- WEATHER -->
+        <div class="centralContainer" id="weatherContainer">
+          <div class="centralContainerHeader" id="weatherHeader">
+            <p>WEATHER FORECAST</p>
+          </div>
+          <div class="weatherDayBox" id="weatherDayBox1" style="left: 57.5px">
+            <p id="weatherLabel1">DAY 2</p>
+            <img id="forecastIcon1" src="Stuff/sunny.svg" class="forecastIcon" width="65" height="65"/>
+            <div class="weatherDayBoxTemp">
+              <p id="forecastLabel1">19°</p>
+            </div>
+          </div>
+          <div class="weatherDayBox" id="weatherDayBox2" style="left: 285px">
+            <p id="weatherLabel2">DAY 3</p>
+            <img id="forecastIcon2" src="Stuff/partly-cloudy.svg" class="forecastIcon" width="65" height="65"/>
+            <div class="weatherDayBoxTemp">
+              <p id="forecastLabel2">21°</p>
+            </div>
+          </div>
+          <div class="weatherDayBox" id="weatherDayBox3" style="left: 512.5px">
+            <p id="weatherLabel3">DAY 4</p>
+            <img id="forecastIcon3" src="Stuff/cloudy.svg" class="forecastIcon" width="65" height="65"/>
+            <div class="weatherDayBoxTemp">
+              <p id="forecastLabel3">17°</p>
+            </div>
+          </div>
+          <img class="backButton" id="backButtonWeather" src="Stuff/backArrowWeather.svg" width="83" height="83"/>
+        </div>
+
+        <!--page transition-->
+        <div id="nextDayDiv">
+          <p id="nextDayLabel"></p>
+        </div>
+
+        <!--the one and only end sadness whoop whoop but also sadness-->
+        <div id="theLastOne">
+          <img src="Stuff/theEnd.svg" id="theLastImage"/>
+          <p id="endedWith">2,000</p>
+          <p id="netGain">0</p>
+          <button id="playAgain" onclick="playagain()">PLAY AGAIN</button>
+          <a href="https://www.youtube.com/watch?v=ZCFkWDdmXG8" id="link" target=”_blank”>Psst! Check out this video to learn more</a>
+        </div>
+
+        <!-- ANALYTICS note: css with weather cause there's not that much-->
+        <div class="centralContainer" id="analyticsContainer">
+          <div class="analyticsRightBox">
+            <!--TODO: header? eg. 'portfolio composition'-->>
+            <p id="emptyPortfolioPieMessage" width="180px"></p>
+            <canvas id="analyticsPie" width="290px" height="290px"></canvas>
+          </div>
+          <div class="centralContainerHeader" id="analyticsHeader">
+            <p>ANALYTICS</p>
+          </div>
+          <canvas id="analyticsLine" width="360px" height="240px"></canvas>
+          <img class="backButton" id="backButtonAnalytics" src="Stuff/backArrowAnalytics.svg" width="83" height="83"/>
+        </div>
+
+        <!-- FRONT PAGE TREE CLICK UI -->
+        <div id="islandTreeInfoContainer">
+          <div id="amountDisplayInfoContainer">
+            <p id="amountDisplayText">x13</p>
+          </div>
+          <img src="Stuff/Plants/plant4.svg" height="100" id="treeImageDisplay" />
+          <p id="treeNameDisplayText">PUFFBERRY</p>
+          <img src="Stuff/lightblue-sunny.svg" id="treeIdealWeatherDisplay" height="36" width="36" />
+          <p id="treeIdealTempDisplay">21°</p>
+          <div id="homeResilienceBubble">
+            <div id="resilienceAmountDisplay" class="point4"></div>
+          </div>
+          <div id="treeValueDisplay">
+            <img src="Stuff/coin.svg" height="35" width="35" id="treeInfoCoin"/>
+            <p id="treeValueDisplayText">3000</p>
+          </div>
+          <button id="sellTreeButton" onclick="sellTreePopUp()">SELL</button>
+          <button id="checkButton" onclick="frontPageUIout()"><img src="Stuff/check.svg" height="50" width="50" id="checkMark"/></button>
+          <img src="Stuff/homeGraphButt.svg" height="61" width="61" id="homeGraphButt"/>
+        </div>
+
+        <!-- SELL PROMPT -->
+        <div id="sellContainer" style="visibility: hidden; opacity: 0;">
+          <div id="sellHeader">
+            <p id="sellTitle">TREE 1</p>
+          </div>
+          <p id="sellQuestion">HOW MANY WOULD YOU LIKE TO SELL?</p>
+          <div id="amountSelectorSell">
+            <div id="amountMinusSell" class="disabledSell"><img src="Stuff/blue-minus.svg" width="22" style="position: absolute; top: 14px; right: 45%; transform: translateX(45%);"/></div>
+            <p id="amountSellingText">1</p>
+            <div id="amountPlusSell" class="non-disabledSell"><img src="Stuff/blue-plus.svg" width="22" height="22" style="position: absolute; top: 14px; left: 45%; transform: translateX(-45%);"/></div>
+          </div>
+          <div id="sellButton"><p>SELL</p></div>
+          <div id="cancelButtonSell" class="enabledCancelSell"><p>CANCEL</p></div>
+        </div>
+
+        
+
+        <!-- MAIN PAGE TREE INFO GRAPH-->
+
+        <div id="mainPageGraph" style="left: -100%;">
+          <img class="backButton" id="backButtonMainGraph" src="Stuff/backArrow.svg" width="83" height="83"/>
+          <canvas id="individualStockLine" width="550px" height="280px"></canvas>
+        </div>
+        
+        <!-- MAP ISLANDS-->
+        <div id="mapscreen">
+          <img src="Stuff/tutorial2.svg" id="t2" class="tut">
+          <img src="Stuff/tutorial3.svg" id="t3" class="tut"> 
+          <button id="homeButton"><img src="Stuff/home.svg" width="30" height="30"/></button>
+
+          <div id="islandscreen">
+            <div id="firstFive" class="islands">
+              <button class="hov1 lessons" id="lesson1" onclick="lesson(1)" style="left: -115px;">
+                <img id="lesson1Floater" src="Stuff/questionMark.svg" class="questionMark" style="top: 260px; left: 167px;"/> <!--question mark-->
+                <svg height="100" width="100" style="position: absolute; top: 300px; left: 150px; z-index: 1">
+                  <ellipse id="lesson1Ellipse" cx="40" cy="20" rx="20" ry="5" style="fill:#E5C621;"> <!--shaded circle-->
+                </svg>
+                <svg height="100" width="100" style="position: absolute; top: 300px; left: 150px;"> <!--cube-->
+                  <polygon id="lesson1PolyTop" points="40,0 80,20 40,40 0,20" style="fill:#F8D521;";/> <!--top-->
+                  <polygon id="lesson1PolyLeft" points="0,20 0,65 40,85 40,40" style="fill:#C7AC1D;";/> <!--left-->
+                  <polygon id="lesson1PolyRight" points="40,40 40,85 80,65 80,20" style="fill:#968218;";/> <!--right-->
+                </svg>
+              </button>
+              <img src="Stuff/L1.svg" class="popUp lessonTitles" id="lessonTitle1"/>
+              <img src="Stuff/L1max.svg" class="popUp lessonMaxes" id="lessonMax1"/> 
+
+              <button class="lessons" id="lesson2" onclick="lesson(2)" style="left: -115px">
+                <img id="lesson2Floater" src="Stuff/questionMark.svg" class="questionMark" style="top: 335px; left: 317px;"/>
+                <svg height="100" width="100" style="position: absolute; top: 375px; left: 300px; z-index: 1">
+                  <ellipse id="lesson2Ellipse" cx="40" cy="20" rx="20" ry="5" style="fill:#E5C621;">
+                </svg>
+                <svg height="100" width="100" style="position: absolute; top: 375px; left: 300px;">
+                  <polygon id="lesson2PolyTop" points="40,0 80,20 40,40 0,20" style="fill:#F8D521;";/> <!--top-->
+                  <polygon id="lesson2PolyLeft" points="0,20 0,65 40,85 40,40" style="fill:#C7AC1D;";/> <!--left-->
+                  <polygon id="lesson2PolyRight" points="40,40 40,85 80,65 80,20" style="fill:#968218;";/> <!--right-->
+                </svg>
+              </button>
+              <img src="Stuff/L2.svg" class="popUp lessonTitles" id="lessonTitle2"/>
+              <img src="Stuff/L2max.svg" class="popUp lessonMaxes" id="lessonMax2"/>
+              <p id="unlock2" class="unlock">UNLOCKED<br>ON DAY 2</p>
+
+              <button class="lessons" id="lesson3" onclick="lesson(3)" style="left: -115px">
+                <img id="lesson3Floater" src="Stuff/questionMark.svg" class="questionMark" style="top: 260px; left: 467px;"/>
+                <svg height="100" width="100" style="position: absolute; top: 300px; left: 450px; z-index: 1">
+                  <ellipse id="lesson3Ellipse" cx="40" cy="20" rx="20" ry="5" style="fill:#E5C621;">
+                </svg>
+                <svg height="100" width="100" style="position: absolute; top: 300px; left: 450px;">
+                  <polygon id="lesson3PolyTop" points="40,0 80,20 40,40 0,20" style="fill:#F8D521;";/> <!--top-->
+                  <polygon id="lesson3PolyLeft" points="0,20 0,65 40,85 40,40" style="fill:#C7AC1D;";/> <!--left-->
+                  <polygon id="lesson3PolyRight" points="40,40 40,85 80,65 80,20" style="fill:#968218;";/> <!--right-->
+                </svg>
+              </button>
+              <img src="Stuff/L3.svg" class="popUp lessonTitles" id="lessonTitle3"/>
+              <img src="Stuff/L3max.svg" class="popUp lessonMaxes" id="lessonMax3"/>
+              <p id="unlock3" class="unlock">UNLOCKED<br>ON DAY 3</p>
+
+              <button class="lessons" id="lesson4" onclick="lesson(4)" style="left: -115px">
+                <img id="lesson4Floater" src="Stuff/questionMark.svg" class="questionMark" style="top: 185px; left: 617px;"/>
+                <svg height="100" width="100" style="position: absolute; top: 225px; left: 600px; z-index: 1">
+                  <ellipse id="lesson4Ellipse" cx="40" cy="20" rx="20" ry="5" style="fill:#E5C621;">
+                </svg>
+                <svg height="100" width="100" style="position: absolute; top: 225px; left: 600px;">
+                  <polygon id="lesson4PolyTop" points="40,0 80,20 40,40 0,20" style="fill:#F8D521;";/> <!--top-->
+                  <polygon id="lesson4PolyLeft" points="0,20 0,65 40,85 40,40" style="fill:#C7AC1D;";/> <!--left-->
+                  <polygon id="lesson4PolyRight" points="40,40 40,85 80,65 80,20" style="fill:#968218;";/> <!--right-->
+                </svg>
+              </button>
+              <img src="Stuff/L4.svg" class="popUp lessonTitles" id="lessonTitle4"/>
+              <img src="Stuff/L4max.svg" class="popUp lessonMaxes" id="lessonMax4"/>
+              <p id="unlock4" class="unlock">UNLOCKED<br>ON DAY 6</p>
+
+              <button class="lessons" id="lesson5" onclick="lesson(5)" style="left: -115px;">
+                <img id="lesson5Floater" src="Stuff/questionMark.svg" class="questionMark" style="top: 260px; left: 765px;"/>
+                <svg height="100" width="100" style="position: absolute; top: 300px; left: 750px; z-index: 1">
+                  <ellipse id="lesson5Ellipse" cx="40" cy="20" rx="20" ry="5" style="fill:#E5C621;">
+                </svg>
+                <svg height="100" width="100" style="position: absolute; top: 300px; left: 750px;">
+                  <polygon id="lesson5PolyTop" points="40,0 80,20 40,40 0,20" style="fill:#F8D521;";/> <!--top-->
+                  <polygon id="lesson5PolyLeft" points="0,20 0,65 40,85 40,40" style="fill:#C7AC1D;";/> <!--left-->
+                  <polygon id="lesson5PolyRight" points="40,40 40,85 80,65 80,20" style="fill:#968218;";/> <!--right-->
+                </svg>
+              </button>
+              <img src="Stuff/L5.svg" class="popUp lessonTitles" id="lessonTitle5"/>
+              <img src="Stuff/L5max.svg" class="popUp lessonMaxes" id="lessonMax5"/>
+              <p id="unlock5" class="unlock">UNLOCKED<br>ON DAY 7</p>
+            </div>
+
+            <!--////////////////////////////-->
+            
+            <div id="secondFive" class="islands" style="left: 100%">
+              <button class="lessons" id="lesson6" onclick="lesson(6)" style="left: -115px; top:75px">
+                <img id="lesson6Floater" src="Stuff/questionMark.svg" class="questionMark" style="top: 260px; left: 167px;"/>
+                <svg height="100" width="100" style="position: absolute; top: 300px; left: 150px; z-index: 1">
+                  <ellipse id="lesson6Ellipse" cx="40" cy="20" rx="20" ry="5" style="fill:#E5C621;">
+                </svg>
+                <svg height="100" width="100" style="position: absolute; top: 300px; left: 150px;">
+                  <polygon id="lesson6PolyTop" points="40,0 80,20 40,40 0,20" style="fill:#F8D521;";/> <!--top-->
+                  <polygon id="lesson6PolyLeft" points="0,20 0,65 40,85 40,40" style="fill:#C7AC1D;";/> <!--left-->
+                  <polygon id="lesson6PolyRight" points="40,40 40,85 80,65 80,20" style="fill:#968218;";/> <!--right-->
+                </svg>
+              </button>
+              <img src="Stuff/L6.svg" class="popUp lessonTitles" id="lessonTitle6"/>
+              <img src="Stuff/L6max.svg" class="popUp lessonMaxes" id="lessonMax6"/>
+              <p id="unlock6" class="unlock">UNLOCKED<br>ON DAY 10</p>
+
+              <button class="lessons" id="lesson7" onclick="lesson(7)" style="left: -115px; top: -75px">
+                <img id="lesson7Floater" src="Stuff/questionMark.svg" class="questionMark" style="top: 335px; left: 317px;"/>
+                <svg height="100" width="100" style="position: absolute; top: 375px; left: 300px; z-index: 1">
+                  <ellipse id="lesson7Ellipse" cx="40" cy="20" rx="20" ry="5" style="fill:#E5C621;">
+                </svg>
+                <svg height="100" width="100" style="position: absolute; top: 375px; left: 300px">
+                  <polygon id="lesson7PolyTop" points="40,0 80,20 40,40 0,20" style="fill:#F8D521;";/> <!--top-->
+                  <polygon id="lesson7PolyLeft" points="0,20 0,65 40,85 40,40" style="fill:#C7AC1D;";/> <!--left-->
+                  <polygon id="lesson7PolyRight" points="40,40 40,85 80,65 80,20" style="fill:#968218;";/> <!--right-->
+                </svg>
+              </button>
+              <img src="Stuff/L7.svg" class="popUp lessonTitles" id="lessonTitle7"/>
+              <img src="Stuff/L7max.svg" class="popUp lessonMaxes" id="lessonMax7"/>
+              <p id="unlock7" class="unlock">UNLOCKED<br>ON DAY 15</p>
+
+              <button class="lessons" id="lesson8" onclick="lesson(8)" style="left: -115px; top: -75px;">
+                <img id="lesson8Floater" src="Stuff/questionMark.svg" class="questionMark" style="top: 260px; left: 467px;"/>
+                <svg height="100" width="100" style="position: absolute; top: 300px; left: 450px; z-index: 1">
+                  <ellipse id="lesson8Ellipse" cx="40" cy="20" rx="20" ry="5" style="fill:#E5C621;">
+                </svg>
+                <svg height="100" width="100" style="position: absolute; top: 300px; left: 450px;">
+                  <polygon id="lesson8PolyTop" points="40,0 80,20 40,40 0,20" style="fill:#F8D521;";/> <!--top-->
+                  <polygon id="lesson8PolyLeft" points="0,20 0,65 40,85 40,40" style="fill:#C7AC1D;";/> <!--left-->
+                  <polygon id="lesson8PolyRight" points="40,40 40,85 80,65 80,20" style="fill:#968218;";/> <!--right-->
+                </svg>
+              </button>
+              <img src="Stuff/L8.svg" class="popUp lessonTitles" id="lessonTitle8"/>
+              <img src="Stuff/L8max.svg" class="popUp lessonMaxes" id="lessonMax8"/>
+              <p id="unlock8" class="unlock">UNLOCKED<br>ON DAY 25</p>
+
+              <button class="lessons" id="lesson9" onclick="lesson(9)" style="left: -115px; top: 75px">
+                <img id="lesson9Floater" src="Stuff/questionMark.svg" class="questionMark" style="top: 185px; left: 617px;"/>
+                <svg height="100" width="100" style="position: absolute; top: 225px; left: 600px; z-index: 1">
+                  <ellipse id="lesson9Ellipse" cx="40" cy="20" rx="20" ry="5" style="fill:#E5C621;">
+                </svg>
+                <svg height="100" width="100" style="position: absolute; top: 225px; left: 600px;">
+                  <polygon id="lesson9PolyTop" points="40,0 80,20 40,40 0,20" style="fill:#F8D521;";/> <!--top-->
+                  <polygon id="lesson9PolyLeft" points="0,20 0,65 40,85 40,40" style="fill:#C7AC1D;";/> <!--left-->
+                  <polygon id="lesson9PolyRight" points="40,40 40,85 80,65 80,20" style="fill:#968218;";/> <!--right-->
+                </svg>
+              </button>
+              <img src="Stuff/L9.svg" class="popUp lessonTitles" id="lessonTitle9"/>
+              <img src="Stuff/L9max.svg" class="popUp lessonMaxes" id="lessonMax9"/>
+              <p id="unlock9" class="unlock">UNLOCKED<br>ON DAY 27</p>
+
+              <button class="lessons" id="lesson10" onclick="lesson(10)" style="left: -115px; top: 75px">
+                <img id="lesson10Floater" src="Stuff/questionMark.svg" class="questionMark" style="top: 260px; left: 765px;"/>
+                <svg height="100" width="100" style="position: absolute; top: 300px; left: 750px; z-index: 1">
+                  <ellipse id="lesson10Ellipse" cx="40" cy="20" rx="20" ry="5" style="fill:#E5C621;">
+                </svg>
+                <svg height="100" width="100" style="position: absolute; top: 300px; left: 750px;">
+                  <polygon id="lesson10PolyTop" points="40,0 80,20 40,40 0,20" style="fill:#F8D521;";/> <!--top-->
+                  <polygon id="lesson10PolyLeft" points="0,20 0,65 40,85 40,40" style="fill:#C7AC1D;";/> <!--left-->
+                  <polygon id="lesson10PolyRight" points="40,40 40,85 80,65 80,20" style="fill:#968218;";/> <!--right-->
+                </svg>
+              </button>
+              <img src="Stuff/L10.svg" class="popUp lessonTitles" id="lessonTitle10"/>
+              <img src="Stuff/L10max.svg" class="popUp lessonMaxes" id="lessonMax10"/>
+              <p id="unlock10" class="unlock">UNLOCKED<br>ON DAY 40</p>
+            </div>
+          </div><!--oolala-->
+         
+
+          <!--arrow buttons-->
+          <div class="arrowButtonM" id="leftMapButton">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+          <div class="arrowButtonM" id="rightMapButton">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div><!--oolala-->
+      
+            <!-- MAP CLOUDS -->
+            <img class="cloud" id="darkCloud1" src="Stuff/darkCloud.svg" width="115" height="80" style="position: absolute; top: 100px; left: -50%;"/>
+            <img class="cloud" id="darkCloud2" src="Stuff/darkCloud.svg" width="115" height="80" style="position: absolute; top: 350px; left: -50%; z-index:2"/>
+            <img class="cloud" id="darkCloud3" src="Stuff/darkCloud.svg" width="115" height="80" style="position: absolute; top: 240px; left: -50%;"/>
+            <img class="cloud" id="darkCloud4" src="Stuff/darkCloud.svg" width="115" height="80" style="position: absolute; top: 145px; left: -50%;"/>
+            <img class="cloud" id="darkCloud5" src="Stuff/darkCloud.svg" width="115" height="80" style="position: absolute; top: 400px; left: -50%;"/>
+            
+            <img class="cloud" id="darkCloud6" src="Stuff/darkCloud.svg" width="115" height="80" style="position: absolute; top: 100px; left: 150%;"/>
+            <img class="cloud" id="darkCloud7" src="Stuff/darkCloud.svg" width="115" height="80" style="position: absolute; top: 180px; left: 150%; z-index:1;"/>
+            <img class="cloud" id="darkCloud8" src="Stuff/darkCloud.svg" width="115" height="80" style="position: absolute; top: 420px; left: 150%;"/>
+            <img class="cloud" id="darkCloud9" src="Stuff/darkCloud.svg" width="115" height="80" style="position: absolute; top: 125px; left: 150%; z-index:1;"/>
+            <img class="cloud" id="darkCloud10" src="Stuff/darkCloud.svg" width="115" height="80" style="position: absolute; top: 210px; left: 150%; z-index: 0"/>
+      
+        </div> 
+          
+        <!-- MAP LESSONS -->
+        <div class="centralContainer" id="lessonContainer">
+          <div class="centralContainerHeader" id="lessonHeader">
+            <p id="lesson_title"></p>
+          </div>
+          <div id="lessonBody" style="display: none">
+            <!--Lesson 1-->
+            <div id="lesson_1" style="display:none">
+              A stock is essentially a small piece of ownership of a company. It is also called a share, so if you buy a stock, you become a shareholder of that company. The percentage or portion of the company’s earnings and assets you actually own comes down to the number of shares you have and how many shares of that company exist.
+              <p>For example, if the assets and earnings of a company were split into 20 pieces, then owning 2 pieces would be equivalent to owning 10% of the company. (Realistically, there would be many more stocks and it would be very difficult to own such a large portion of the company.)                
+                <p>Companies may issue stocks for a few reasons, but chiefly for expansion purposes. Investments in the form of stocks allow them to undertake new projects and to grow. By buying a company’s stock, investors recognize the value of a company and hope to grow their own money. 
+                <p> 
+                <div id="analogy">
+                  In this game, you are an investor. There are a total of 24 different plant species available to you, each representing a company. You are allowed to invest in up to 7 different plant species, and you can purchase up to 10 plants from the same species. Stocks from the same company are collectively represented by one plant. Don’t forget that a stock’s price is not directly indicative of the company’s worth!
+                </div>
+                  <p></p><br>
+              <button id="quizButton" onclick="startQuiz(1)"><p>QUIZ ME</p></button>
+              <div id="completed1" class="completed"><p>COMPLETED</p></div>
+            </div>
+            <!--Lesson 2-->
+            <div id="lesson_2" style="display:none">
+              Let’s say today, a pair of special edition shoes cost $250. However, you decide to put the $250 aside and buy the shoes in 10 years. After a decade has passed, would you still be able to buy that pair of shoes for $250? Probably not, because as the years went by, the price of the shoes would naturally increase due to something called <b><u>inflation</u></b>. 
+              <p id="definition">Inflation is the steady rise in the average price of goods and services within a particular economy, over time. Low, stable inflation benefits the economy and helps money keep its value, but also means over time, inflation reduces your purchasing power.</p>
+              <p></p>Investors, including stock buyers, usually want to outpace inflation by putting their money somewhere, rather than leaving it just laying around. However, outpacing inflation isn’t the only reason to invest in stocks. If you invest smartly, you could also earn generous amounts of money back in the long term.
+              <p></p>Most stock buyers <i>invest</i> in stocks, which means they look for returns in the long run and are more likely to hold onto stocks through ups and downs. The majority of people do not have time to keep a constant eye on the daily fluctuations of stock prices. However, there are stock buyers who engage in stock trading, also known as day trading. They believe in “beating the market” — they take advantage of short-term fluctuations by buying and selling stocks quickly within a day to earn a profit. 
+              <p></p><div id="analogy">This game focuses on stock investing — changes in the plant prices don’t reflect small fluctuations in the short term. The changes you’ll see in one “day” or turn in this game may more accurately represent changes over weeks, months, or even years. Furthermore, it is generally harder to predict short-term changes than long-term growth or loss. Therefore, it is likely in your best interest to manage your plants with a long term vision in mind!</div>
+              <p></p><br>
+              <button id="quizButton" onclick="startQuiz(2)"><p>QUIZ ME</p></button>
+              <div id="completed2" class="completed"><p>COMPLETED</p></div>
+            </div>
+            <!--Lesson 3-->
+            <div id="lesson_3" style="display:none">
+              When a company first issues shares to the public, they are called initial public offerings (IPOs). After these stocks are resold, they are sold on the secondary stock market, commonly known as the stock market. 
+              <p></p>The stock market encompasses all the companies that offer shares to the public. However, there are infrastructures called <b><u>stock exchanges</b></u> that provide structure and facilitate the trading of stocks.
+              <p></p>The stock exchange, although often used interchangeably with stock market, is actually a subset of the stock market. For instance, in the US, there are many stock exchanges like NASDAQ and the New York Stock Exchange (NYSE) that make up the US's stock market.
+              <p></p>Examples of other big stock exchanges in the world are the Shanghai Stock Exchange (SSE), the London Stock Exchange (LSE), and the Tokyo Stock Exchange (TSE). 
+
+              <p></p>Trading on the stock exchange can only happen between certain hours. For instance, the NYSE and the Toronto Stock Exchange allow stocks to be bought and sold Monday through Friday, from 9:30 a.m. to 4:00 p.m. Outside of these hours, stock prices can still change, but no action can be taken.
+              <p></p><div id="analogy">Here, the market is the stock exchange, part of the bigger stock market, where you can buy plants, which represent stocks. You can choose to sell a stock by clicking on a plant in your homepage.</div>
+              <p></p><br>
+              <button id="quizButton" onclick="startQuiz(3)"><p>QUIZ ME</p></button>
+              <div id="completed3" class="completed"><p>COMPLETED</p></div>
+            </div>
+            <!--Lesson 4-->
+            <div id="lesson_4" style="display:none">
+              Supply and demand — fundamental forces of the market — are what influence stock prices. We say that the demand is higher than the supply when there are more people who want to buy shares of a certain company than people who want to sell shares of that same company. If the demand for a stock is higher than the supply, the price of that stock will rise. Similarly, if the demand is lower than the supply, the price of the stock will drop.
+              <p></p>Even if we understand supply and demand, what makes people want to buy or sell one stock over the other? There are many factors that influence supply and demand.
+              <p></p>The main theory is that changes in a stock’s price reflect what investors perceive of that company’s worth. The current price of each stock multiplied by the number of shares of that company indicates its value, also called market capitalization. As a result, good or bad news about a company, its management, or otherwise may influence its stock prices.
+              <p></p>Another important factor that determines a company’s worth is its earnings, or profits. Publicly traded companies (companies that have shares available to the public in the stock market) report their earnings quarterly (4 times a year). If their earnings are higher than predicted, their stock prices go up. If their earnings are lower than expected, their share prices go down.
+              <p></p>Ultimately, a company’s share price is determined by investors' <u>sentiments, attitudes, and expectations of a company’s worth</u>, which may be influenced by factors such as news or earnings reports.
+              <p></p><div id="analogy">As you can see, supply and demand of stocks is unpredictable, which makes stocks volatile. In this game, supply and demand of the stocks is represented by weather, which directly impacts the plants’ growth. Some weather conditions may allow certain plant species to flourish (high demand, lower supply) while causing other species to suffer (low demand, high supply). In the plant market, the change in prices from one day to another is indicated by green or red arrows.</div>             
+              <p></p><br>
+              <button id="quizButton" onclick="startQuiz(4)"><p>QUIZ ME</p></button>
+              <div id="completed4" class="completed"><p>COMPLETED</p></div>
+            </div>
+            <!--Lesson 5-->
+            <div id="lesson_5" style="display:none">
+              Predicting how a stock will grow or shrink is no easy feat. Professional investors have an abundance of different strategies and methods, but none are foolproof due to the stock market’s volatile and unpredictable nature.
+              <p></p>To project how a stock will do in the future, most stock buyers look at its current price and its historical growth. However, these can only offer an estimate of its future growth. 
+              <p></p>You should recognize that when investing in a stock, there is rarely a “prime time” when you can get a stock on a “bargain”. It is wiser to set yourself a price range for which you’d buy the stock, wait until the stock reaches it, then hold onto the stock until it reaches a higher value. Of course, making smart stock purchasing decisions is key. Every stock investment decision should be supported by a reason other than your desire for an increase in price.
+              <p></p>For instance, if you believe a company’s upcoming product will be a success, you may decide to invest in that company as that would be a good reason to expect growth.
+              <p></p>When deciding if you should sell a stock, you should not solely look for a drop in the stock price. Instead, you can ask yourself a few questions:
+              <ul>
+                <li>“Do the reasons that supported my choice in investing still apply?”</li>
+                <li>“Do I need the money from selling these stocks soon?”</li>
+                <li>“Do I see a better investing opportunity elsewhere?”</li>
+              </ul>
+
+              <p></p>In summary, it can be very difficult to predict stock prices and is risky to make decisions solely based on a stock’s price. Instead, focus on analyzing factors that can signify a company’s increase in worth and make decisions rationally with a long term vision.
+              <p></p><div id="analogy">To simplify prediction and decision making, the weather forecast can help you predict how well your plants will grow. Of course, it is only an estimate, so don’t rely completely on it!</div>
+              <p></p><br>
+              <button id="quizButton" onclick="startQuiz(5)"><p>QUIZ ME</p></button>
+              <div id="completed5" class="completed"><p>COMPLETED</p></div>
+            </div>
+            <!--Lesson 6-->
+            <div id="lesson_6" style="display:none">
+              All investments, including stocks, carry some level of <b><u>risk</b></u>.
+              <p id="definition">Risk refers to the uncertainty of investments, as they have the potential to harm your financial welfare.</p>
+              <p></p>Stocks are not the only investment you can make. Companies can take loans from investors instead of going to a bank—these are called bonds. Bonds are quite different from stocks, but are generally less risky. 
+
+              <p></p>So why invest in stocks when you can invest in relatively safer bonds? Well, because there’s a concept of “high risk, high reward.” Essentially, as a general rule, the level of risk associated with an investment, like a stock, corresponds to the level of return it might achieve. This is because since investors are willing to take the risk and possibly lose lots of money, they should be equally highly rewarded. This concept keeps stocks viable and attractive.
+              <p></p>In the stock market itself, there is also a vast range of risks associated with each stock. <b><u>Volatility</b></u> of a stock, a measure of its fluctuation in price, can offer a guide to its riskiness. However, you should keep in mind that volatility itself is a flawed measure of risk, and other factors are involved.
+              <p></p>Risk analysis is subjective; what one investor deems to be incredibly risky can be perceived less risky by another.
+              <p></p><div id="analogy">Check out the market to see the appearance of a resilience bar for each plant! They give some measure of riskiness, more specifically of volatility. The higher the resilience, the less volatile its price is, and it will be able to resist unfavourable weather conditions better. However, note that these stable species will see less intense fluctuations in price and will generally not see astounding rises in value.</div>
+              <p></p><br>
+              <button id="quizButton" onclick="startQuiz(6)"><p>QUIZ ME</p></button>
+              <div id="completed6" class="completed"><p>COMPLETED</p></div>
+            </div>
+
+            <!--Lesson 7-->
+            <div id="lesson_7" style="display:none">
+              “Don’t put all your eggs in one basket.” This common saying essentially refers to the concept of <b><u>diversification</b></u>, whose importance in investing cannot be emphasized enough!
+              <p id="definition">Diversification: instead of investing a lot of money in one or two companies, distribute your investments to many to lower your overall risk.</p>
+              <p></p>Diversifying can apply to investing in many ways. For example, among your stock purchases, aim to have shares from dozens of different companies. This way, when a company’s stocks crash or lose all their value, you aren’t as harshly affected.
+              <p></p>However, diversifying your shares doesn’t mean you can randomly choose a handful to invest in. It wouldn’t be very effective to invest in 20 big tech companies like Apple, Google, and Facebook, since they have common risk factors. This is known as industry risk, or the dangers of a stock resulting not from problems of the company, but from broader issues within the entire industry. So, if one thing goes terribly wrong for one company, other tech companies may also be severely impacted. Two things to look out for when aiming to diversify your stocks is by choosing companies of different sizes and in different locations (eg. purchasing stocks from the US, Japan, Europe).              <p></p>In the stock market itself, there is also a vast range of risks associated with each stock. <b><u>Volatility</b></u> of a stock, a measure of its fluctuation in price, can offer a guide to its riskiness. However, you should keep in mind that volatility itself is a flawed measure of risk, and other factors are involved.
+              <p></p>Another way to reduce your investment risk is by diversifying your <b><u>portfolio</b></u>.
+              <p id="definition">Portfolio: a collection of investments and financial assets (like shares and bonds) held by an individual.</p>
+              <p></P>One of the best ways to obtain high returns at a low risk is creating a portfolio with many types of assets: stocks, bonds, and other types of securities. This is because if one class of investments do poorly one year, it’s likely another class will have done well and will soften the impact on your portfolio.
+              <p><p><div id="analogy">In real life, it is difficult to have a truly diversified portfolio with little sums of money to invest. In the game, you can buy stocks from up to 7 different companies, or 7 different plant species. Take advantage of this to avoid any catastrophic losses in the future!</div>
+
+              <p></p><br>
+              <button id="quizButton" onclick="startQuiz(7)"><p>QUIZ ME</p></button>
+              <div id="completed7" class="completed"><p>COMPLETED</p></div>
+            </div> 
+
+            <!--Lesson 8-->
+            <div id="lesson_8" style="display:none">
+              As the stock market is a complex collection of a large number of shares that fluctuate due to their own supply and demand levels, it’s less common for the entire stock market to suddenly increase or decrease.
+              <p></p>However, if a significant amount of investors have low confidence in future investments on the stock market, this can cause stock prices on the market to drop, as many investors suddenly decide to sell their shares.
+              <p></p>Investor confidence can be affected by:
+              <ul>
+                <li>Wars or other conflicts</li>
+                <li>Inflation or deflation concerns</li>
+                <li>Natural disasters or extreme weather</li>
+              </ul>
+              <p></p><b><u>Stock corrections</b></u> occur when the stock market drops by 10% or more. Although detrimental to day traders, if investors hold onto their stocks, prices recover after a period of time.
+              <p></p>A <b><u>stock market</b></u> crash consists of a steep, sudden drop in stock prices. An example would be the famous Wall Street Crash of 1929.
+              <p></p>A more recent and significant event that caused a stock market crash would be the COVID-19 pandemic. At the beginning of the pandemic, prices dropped dramatically in part due to the uncertainty of the future.
+              <p></p>Corrections and crashes are unexpected and unpredictable. As a long term investor, usually the best thing to do is nothing, as they will generally recover. However, this can take unknown amounts of time, so it is important to diversify your portfolio to avoid suffering crippling losses in the short term. 
+              <p></p><div id="analogy">Extreme weather and natural disasters represent stock market crashes or corrections by greatly affecting weather conditions in which the plants grow. These events will test your plants’ resilience. If you suffer losses, will you hold on and wait for recovery in the long run?</div>
+
+              <p></p><br>
+              <button id="quizButton" onclick="startQuiz(8)"><p>QUIZ ME</p></button>
+              <div id="completed8" class="completed"><p>COMPLETED</p></div>
+            </div>
+            <!--Lesson 9-->
+            <div id="lesson_9" style="display:none">
+              <p></p>Aside from a stock market crash, another harmful component to an investor’s portfolio is <b><u>bankruptcy</b></u>.
+              <p id="definition">Bankruptcy is a legal process that results from a company’s inability to repay their debt. Though it may offer some relief from debt, the company and shareholders are most negatively affected.</p>
+              <p></p>When a company files for bankruptcy, the price of their stock plummets and could very well become worthless. Often, the stock itself is delisted from major stock exchanges. 
+              <p></p>For US companies, there are two types of bankruptcies:
+              <ul>
+                <li>Chapter 11 Bankruptcy: the goal of the company is to reorganize and recover. Sears, which went bankrupt in 2018, is an example. However, stock prices of such companies usually remain very low for a long period of time.</li>
+                <li>Chapter 7 Bankruptcy: the company goes out of business and any remaining assets will be paid out.</li>
+              </ul>
+
+              <p></p>In both cases, shareholders are the last ones to receive any assets from the company and will usually receive nothing. If possible, you can choose to sell the stocks you hold, but usually they will be rendered worthless. If the company files for Chapter 11 bankruptcy, there is a small chance the stock price can eventually recover if you keep the shares. However, it is extremely risky and ill-advised to invest in a company that has gone bankrupt.
+
+              <p></p><br>
+              <button id="quizButton" onclick="startQuiz(9)"><p>QUIZ ME</p></button>
+              <div id="completed9" class="completed"><p>COMPLETED</p></div>
+            </div>
+            <!--Lesson 10-->
+            <div id="lesson_10" style="display:none">
+              <p></p>As you’ve come to realize, investing in stocks can be complicated, unpredictable, and risky. It is even more so in the real world, especially as a beginner investor. Though you now have a grasp on the basics of stocks, there is still lots more to learn. Here are a few last tips regarding investing in real life.
+
+              <p></p><b><i>Brokers:</b></i>
+              <p></p>In this game, you traded stocks on your own and called all the shots. In real life, though, you cannot simply buy an Apple stock from NASDAQ whenever you want. There is a middleman, called a stockbroker (or broker) who does that for you. Their services generally come with a fee, which is another reason to avoid buying and selling stocks on a whim.
+              <p></p>There are full-service brokers, who manage a tailored portfolio but who also charge a lot, and online or discount brokers. The latter group does not offer investment advice, they will just follow your orders.
+              
+              <p></p><b><i>Mutual funds & Index funds:</b></i>
+              <p></p>Do you want to profit from the well-performing stock market but avoid risks associated with individual stocks? Perhaps you’d like to invest in funds, like index funds or mutual funds. Mutual funds are essentially pools of money provided by several investors that are managed by a separate fund manager. Index funds are a type of mutual fund whose contents aim to mimic movement of specific indices. In either case, one stock’s downfall has a much smaller impact on your portfolio and you can benefit from the general growth. This is another kind of diversification.
+            
+              <p></p><b><i>Age of majority:</b></i>
+              <p></p>Unfortunately, to open a stock trading account, you have to be the age of majority, which is 18 in most places. However, this doesn’t stop many young investors from buying shares. Have your parents open an account under their name, but allow you to invest in companies you believe in, preferably with your own money! This is commonly called a custodial account or a trust account, and will be transferred to you when you turn 18.
+
+              <p></p><br>
+              <button onclick="congrats()" id="quizButton"><p>QUIZ ME</p></button>              <div id="completed10" class="completed"><p>COMPLETED</p></div>
+            </div>
+          </div>
+          <div id="quiz10">
+            <img src="Stuff/Plants/plant1.svg" id="plantImg"/>
+            <img src="Stuff/coins3.svg" id="coinsImg"/>
+            <div id="words">
+              <p id="words-surprise">SURPRISE</p>
+              <p id="words-congrats">CONGRATS ON FINISHING<br>ALL THE LESSONS!</p>
+              <p id="words-click">click done to collect your reward</p>
+            </div>
+          </div>
+          <button id="doneButton10" onclick="done(10)">DONE</button>
+          
+          <div id="quizBody">
+
+            <!--Quiz 1-->
+            <div id="qBox1" class="qBox">
+              <p class="questionNum">Q1</p>
+              <div id="question1" class="questions"></div>
+              <button class="choices" id="choice1a" onclick="chosen('a', 1)">
+                <img src="Stuff/notFilled.png" id="yo" class="radioCircle">
+                <img src="Stuff/filled.png" id="a1Fill" class="toFill radioCircle">
+                <img src="Stuff/answerRight.svg" id="righta1" class="toFill radioCircle">
+                <img src="Stuff/answerWrong.svg" id="wronga1" class="toFill radioCircle">
+                <p id="text1a"></p>
+              </button>
+              <button class="choices" id="choice1b" style="top: 120px;" onclick="chosen('b', 1)">
+                <img src="Stuff/notFilled.png" class="radioCircle">
+                <img src="Stuff/filled.png" id="b1Fill" class="toFill radioCircle">
+                <img src="Stuff/answerRight.svg" id="rightb1" class="toFill radioCircle">
+                <img src="Stuff/answerWrong.svg" id="wrongb1" class="toFill radioCircle">
+                <p id="text1b"></p>
+              </button>
+              <button class="choices" id="choice1c" style="top: 180px" onclick="chosen('c', 1)">
+                <img src="Stuff/notFilled.png" class="radioCircle">
+                <img src="Stuff/filled.png" id="c1Fill" class="toFill radioCircle">
+                <img src="Stuff/answerRight.svg" id="rightc1" class="toFill radioCircle">
+                <img src="Stuff/answerWrong.svg" id="wrongc1" class="toFill radioCircle">
+                <p id="text1c"></p>
+              </button>
+            </div>
+          
+            <!--Quiz 2-->
+            <div id="qBox2" class="qBox" style="left: 150%">
+              <p class="questionNum">Q2</p>
+              <div id="question2" class="questions"></div>
+              <button class="choices" id="choice2a" onclick="chosen('a', 2)">
+                <img src="Stuff/notFilled.png" class="radioCircle">
+                <img src="Stuff/filled.png" id="a2Fill" class="toFill radioCircle">
+                <img src="Stuff/answerRight.svg" id="righta2" class="toFill radioCircle">
+                <img src="Stuff/answerWrong.svg" id="wronga2" class="toFill radioCircle">
+                <p id="text2a"></p>
+              </button>
+              <button class="choices" id="choice2b" style="top: 120px;" onclick="chosen('b', 2)">
+                <img src="Stuff/notFilled.png" class="radioCircle">
+                <img src="Stuff/filled.png" id="b2Fill" class="toFill radioCircle">
+                <img src="Stuff/answerRight.svg" id="rightb2" class="toFill radioCircle">
+                <img src="Stuff/answerWrong.svg" id="wrongb2" class="toFill radioCircle">
+                <p id="text2b"></p>
+              </button>
+              <button class="choices" id="choice2c" style="top: 180px" onclick="chosen('c', 2)">
+                <img src="Stuff/notFilled.png" class="radioCircle">
+                <img src="Stuff/filled.png" id="c2Fill" class="toFill radioCircle">
+                <img src="Stuff/answerRight.svg" id="rightc2" class="toFill radioCircle">
+                <img src="Stuff/answerWrong.svg" id="wrongc2" class="toFill radioCircle">
+                <p id="text2c"></p>
+              </button>
+            </div> 
+          
+            <!--Quiz 3-->
+            <div id="qBox3" class="qBox" style="left: 150%">
+              <p class="questionNum">Q3</p>
+              <div id="question3" class="questions"></div>
+              <button class="choices" id="choice3a" onclick="chosen('a', 3)">
+                <img src="Stuff/notFilled.png" class="radioCircle">
+                <img src="Stuff/filled.png" id="a3Fill" class="toFill radioCircle">
+                <img src="Stuff/answerRight.svg" id="righta3" class="toFill radioCircle">
+                <img src="Stuff/answerWrong.svg" id="wronga3" class="toFill radioCircle">
+                <p id="text3a"></p>
+              </button>
+              <button class="choices" id="choice3b" style="top: 120px;" onclick="chosen('b', 3)">
+                <img src="Stuff/notFilled.png" class="radioCircle">
+                <img src="Stuff/filled.png" id="b3Fill" class="toFill radioCircle">
+                <img src="Stuff/answerRight.svg" id="rightb3" class="toFill radioCircle">
+                <img src="Stuff/answerWrong.svg" id="wrongb3" class="toFill radioCircle">
+                <p id="text3b"></p>
+              </button>
+              <button class="choices" id="choice3c" style="top: 180px" onclick="chosen('c', 3)">
+                <img src="Stuff/notFilled.png" class="radioCircle">
+                <img src="Stuff/filled.png" id="c3Fill" class="toFill radioCircle">
+                <img src="Stuff/answerRight.svg" id="rightc3" class="toFill radioCircle">
+                <img src="Stuff/answerWrong.svg" id="wrongc3" class="toFill radioCircle">
+                <p id="text3c"></p>
+              </button>
+            </div> 
+          
+          </div> 
+
+        <button id="nextQuestion" onclick="nextQ()" disabled><img src="Stuff/nextQuestion.svg"/></button>
+        <button id="prevQuestion" onclick="prevQ()" disabled><img src="Stuff/prevQuestion.svg"/></button>
+        <button id="submitButton" onclick="submit()" disabled>SUBMIT</button>
+        <button id="doneButton" onclick="done(0)">DONE</button>
+        <img class="backButton" id="backButtonLesson" src="Stuff/backArrowLesson.svg" width="83" height="83"/>
+        </div>
+
+        <div id="whiteBlock"></div>
+
+        <div id="showCoins">
+          <p id="youEarn">YOU HAVE<br>EARNED</p>
+          <img src="Stuff/coin.svg" id="earnCoinImg"/>
+          <p id="amountEarned"></p>
+        </div>
+
+
+        <!--start page-->
+        <div id="homepage">
+          <div class="homepage-content">
+              <img id="titleImage" src="Stuff/titlePage.svg" style="z-index: 6"/>
+              <img class="cloudsTitle" id="cloudT1" src="Stuff/cloud.svg"/>
+              <img class="cloudsTitle" id="cloudT2" src="Stuff/cloud.svg"/>
+              <img class="cloudsTitle" id="cloudT3" src="Stuff/cloud.svg"/>
+              <img class="cloudsTitle" id="cloudT4" src="Stuff/cloud.svg"/>
+              <img class="cloudsTitle" id="cloudT5" src="Stuff/cloud.svg"/>
+          </div>
+          <button onclick="playMusic(); startGame(); stopClouds();" id="playbutton"><span style="font-weight:200;">LET'S GO</span></button>
+        </div>
+      </div>
+    </div><!--here-->
+
+    <script>
+      //play button at beginning
+      function playMusic() {
+        document.getElementById("backgroundmusic").play();
+        document.getElementById("backgroundmusic").muted = false;
+      }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="JS/trees.js"></script>
+    <script src="JS/graph.js"></script>
+    <script src="JS/script.js"></script>
+    <script src="JS/market.js"></script>
+    <script src="JS/map.js"></script>
+    
+  </body>
+</html>

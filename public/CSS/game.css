@@ -1,0 +1,1062 @@
+
+/*
+todo: replace front page image
+OPEN SANS: @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+ACTOR: @import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
+*/
+
+.game {
+  position: absolute;
+  width: 1000px;
+  height: 600px;
+  top: 0px;
+  left: 0px;
+  background: radial-gradient(79.08% 79.08% at 50% 50%, rgba(255, 255, 255, 0) 0%, #9ae0d7 100%), #baf0e9;
+  font-family: 'Poppins', sans-serif;
+  /*transform: translate(-50%, -50%);*/
+  overflow: hidden;
+  transition: 2s;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:disabled,
+button[disabled]{
+  cursor: auto;
+}
+
+#buttonContainer {
+  position: absolute;
+  top: 450px;
+  text-align: center;
+  width: 100%;
+  padding: 0px;
+}
+
+.mainButton {
+  width: 75px;
+  height: 75px;
+  border-radius: 50px;
+  background-color: #5DAFA6;
+  display: inline-block;
+  border: none;
+  margin: 0px 15px 0px 15px;
+  padding: 0px;
+  transition: 0.5s;
+  transition: all .3s ease-in-out;
+  position: relative;
+}
+
+.mainButton:hover:enabled {
+  background-color: #407D77;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.mainButton:disabled {
+  opacity: 40%;
+}
+
+#day {
+  color: #196B62; /*196B62*/
+  transition: 2s;
+}
+
+#homescreen {
+  position: absolute;
+  width: 1000px;
+  height: 600px;
+  left: 0px;
+  top: 0px;
+  transition: 2s;
+}
+
+#mapButton {
+  background-color: #486785;
+  position: absolute;
+  top: 450px;
+  margin: 0px 0px 0px 80px;
+}
+
+#mapButton:hover {
+
+  background-color: #2A455E;
+}
+
+#endTurnButton {
+  position: absolute;
+  font-family: 'Poppins', sans-serif;
+  width: 160px;
+  height: 75px;
+  border-radius: 40px;
+  background-color: #FF6565;
+  display: inline-block;
+  border: none;
+  top: 450px; /*450*/
+  right: 80px;
+  padding: 0px;
+  transition: 1s;
+  font-size: 24px;
+  font-weight: 200;
+  color: white;
+  transition: 0.5s;
+  transition: all .3s ease-in-out;
+}
+
+#endTurnButton:hover:enabled {
+  background-color: white;
+  color: #FF6565;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#endTurnButton:disabled {
+  background-color: #c8a89c !important;
+  color: #fff !important;
+  cursor: auto !important;
+}
+
+.tutEndTurnButt {
+  background-color: #c8a89c !important;
+}
+
+#moneyDiv {
+  position:absolute;
+  border-radius: 50px;
+  background-color: #5DAFA6;
+  width: 150px;
+  height: 55px;
+  top: 50px;
+  right: 50px;
+  transition: 2s;
+  text-align:right;
+}
+
+#coin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 100px;
+  background-color: #F8D521;
+  width:35px;
+  height: 35px;
+  margin: 10px;
+}
+
+#playerCoins {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+  color: white;
+  width: 100px;
+  margin: 0px;
+  display: inline-block;
+}
+
+#weatherDiv {
+  position:absolute;
+  border-radius: 50px;
+  background-color: #D1FFFA;
+  width: 150px;
+  height: 55px;
+  top: 120px;
+  right: 50px;
+  transition: 0.5s;
+}
+
+#weatherDivIcon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#currentTemp {
+  position: absolute;
+  top: 5px;
+  left: 55px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+  color: #5DAFA6;;
+  width: 100px;
+  margin: 0px;
+  display: inline-block;
+}
+
+.centralContainer {
+  width: 770px;
+  height: 400px;
+  position: absolute;
+  top: 150px;
+  left: -100%;
+  padding: 0px;
+  border-radius: 60px;
+  transition: 1s;
+}
+
+#marketContainer {
+  background-color: #573838;
+}
+
+#weatherContainer {
+  background-color: #5DAFA6;
+}
+
+#analyticsContainer {
+  background-color: #F8D521;
+}
+
+.centralContainerHeader {
+  position: absolute;
+  width: 770px;
+  height: 60px;
+  top:0px;
+  border-radius: 40px 40px 0px 0px;
+}
+
+#marketHeader {
+  background-color: #6CE06A;
+}
+
+#weatherHeader {
+  background-color: #336A64;
+}
+
+#analyticsHeader {
+  background-color: #A58F1A;
+}
+
+.centralContainerHeader p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+  margin-top: 13px;
+}
+
+#marketHeader p {
+  color: #3D833B;
+}
+
+#weatherHeader p {
+  color: #84D3CB;
+}
+
+#analyticsHeader p {
+  color: #FEE76C;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.backButton {
+  position: absolute;
+  top: -40px;
+  left: -25px;
+  transition: 0.2s;
+}
+
+.backButton:hover {
+  left: -35px;
+  cursor: pointer;
+}
+
+.arrowButton {
+  position: absolute;
+  top: 190px;
+  background-color: #573838;
+  width: 50px;
+  height: 50px;
+  border-radius: 60px;
+  transition: 0.2s;
+}
+
+#leftMarketButton {
+  left: 10px;
+}
+
+#rightMarketButton {
+  right: 10px;
+}
+
+.arrowButton i{
+  color: #AB7474;
+  font-size: 30px;
+  transition: 0.2s;
+}
+
+#leftMarketButton i {
+  margin: 10px 0px 0px 13px;
+}
+
+#rightMarketButton i {
+  margin: 10px 0px 0px 17px;
+}
+
+.arrowButton:hover {
+  background-color: #CE9696;
+  cursor: pointer;
+}
+
+.arrowButton:hover i {
+  color: #573838;
+}
+
+.cloud {
+  transition: 2s;
+}
+
+#nextDayDiv {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 1000px;
+  background-color: white;
+  transition: 1.5s;
+  z-index: 4;
+}
+
+#nextDayDiv p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 60px;
+  font-weight: 100;
+  color: #196B62;
+  margin: 0px;
+}
+
+.plantOnIsland {
+  position: absolute; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  top: -50px; 
+  visibility: hidden;
+}
+
+
+
+.treeIslandHasTree {
+  transition: 0.5s;
+}
+
+.treeIslandHasTree:hover {
+  transform: translate(0, -10px);
+  cursor: pointer;
+}
+
+#islandTreeInfoContainer {
+  position: absolute;
+  top: 630px;
+  left: 0px;
+  width: 100%;
+  height: 170px;
+  background-color: #4C9E95;
+  transition: 1s;
+  /*z-index: 3;*/
+}
+
+#amountDisplayInfoContainer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 180px;
+  height: 100%;
+  background-color: #2E5B56;
+}
+
+#homeGraphButt {
+  position: absolute;
+  top: -30px;
+  left: 60px;
+  transition: 0.5s;
+}
+
+#homeGraphButt:hover {
+  top: -40px;
+  cursor: pointer;
+}
+
+#amountDisplayText {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 60px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  font-size: 36px;
+  margin: 0px;
+  color: #ABECE5;
+}
+
+#treeImageDisplay {
+  position: absolute;
+  left: 210px;
+  top: 30px;
+}
+
+#treeNameDisplayText {
+  position: absolute;
+  top: 30px;
+  font-size: 36px;
+  left: 318px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  color: #ACECE5;
+  margin: 0px;
+}
+
+#treeIdealWeatherDisplay {
+  position: absolute;
+  top: 80px;
+  left: 318px;
+}
+
+#treeIdealTempDisplay {
+  position: absolute;
+  top: 86px;
+  left: 364px;
+  margin: 0px;
+  color: #ACECE5;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+}
+
+#homeResilienceBubble {
+  position: absolute;
+  width: 116px;
+  height: 20px;
+  top: 88px;
+  left: 410px;
+  background-color: #AFF1EA;
+  border-radius:140px;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+#resilienceAmountDisplay {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: #8CD7CF;
+  height: 100%;
+}
+
+.point2 {
+  width: 20%;
+}
+.point4 {
+  width: 40%;
+}
+.point6 {
+  width: 60%;
+}
+.point8 {
+  width: 80%;
+}
+.point10 {
+  width: 100%;
+}
+
+#treeValueDisplay {
+  position: absolute;
+  height: 55px;
+  width: 150px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 600px;
+  background-color: #5DAFA6;
+  border-radius: 50px;
+}
+
+#treeInfoCoin {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin: 0px;
+}
+
+#treeValueDisplayText {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+  color: white;
+  margin: 0px;
+}
+
+#sellTreeButton {
+  position: absolute;
+  font-family: 'Poppins', sans-serif;
+  width: 130px;
+  height: 55px;
+  border-radius: 50px;
+  background-color: #F8D521;
+  display: inline-block;
+  border: none;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 765px;
+  padding: 0px;
+  font-size: 30px;
+  font-weight: normal;
+  color: #4C9E95;
+  transition: 0.5s;
+}
+
+#sellTreeButton:hover {
+  background-color: #3A7B74;
+  color: #F8D521;
+  cursor: pointer;
+}
+
+#checkButton {
+  position: absolute;
+  left: 900px;
+  top: 50%;
+  transform: translateY(-50%);
+  left:910px;
+  height: 55px;
+  width: 55px;
+  background-color: #ABECE5;
+  border-radius: 55px;
+  border: none;
+  transition: 0.5s;
+}
+
+#checkButton:hover {
+  background-color: #415B59;
+  cursor: pointer;
+}
+
+#checkMark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#treeInfoTransitionPanel {
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:100%;
+  background-color: #AFF1EA;;
+  transition: 0.5s;
+}
+
+#stonks {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #2E5B56;
+  font-size: 90px;
+  font-weight: 100;
+  font-family: 'Poppins', sans-serif;
+  margin: 0px;
+}
+
+#sellContainer {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  left: 330px;
+  top: 50px;
+  background-color: #4C9E95;
+  border-radius: 50px 50px 40px 40px;
+  text-align:center;
+  transition: 1s;
+}
+
+#sellHeader {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background-color: #387B74;
+  border-radius: 40px 40px 0px 0px;
+  text-align: center;
+}
+
+#sellTitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #AFF1EA;
+  margin: 28px 0px 0px 0px;
+}
+
+#sellQuestion {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  width: 240px;
+  color: #AFF1EA;
+  margin: 120px 50px 0px 50px;
+}
+
+#amountSelectorSell {
+  position: absolute;
+  top: 195px;
+  left: 80px;
+  width: 180px;
+  height: 50px;
+  background-color: #AFF1EA;
+  border-radius: 40px;
+}
+
+.non-disabledSell {
+  position: absolute;
+  background-color: #387B74;
+  width: 50px;
+  height: 50px;
+  transition: 0.2s;
+}
+
+.non-disabledSell:hover {
+  cursor: pointer;
+  background-color: rgb(68, 109, 105);
+}
+
+.disabledSell {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transition: 0.2s;
+  background-color:#387B74;
+  opacity: 40%;
+}
+
+.disabledSell:hover {
+  cursor: default;
+}
+
+#amountMinusSell {
+  border-radius: 30px 0px 0px 30px;
+}
+
+#amountPlusSell {
+  border-radius: 0px 30px 30px 0px;
+  right: 0px;
+}
+
+#amountSellingText {
+  position: absolute;
+  font-style: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 13px;
+  margin: 0px;
+  color: #4C9E95;
+}
+
+.plus-minus {
+  position: absolute;
+  top: 17px;
+  left: 45%;
+  transform: translateX(-45%);
+}
+
+#sellButton {
+  position: absolute;
+  width: 105px;
+  height: 45px;
+  top: 270px;
+  left: 45px;
+  background-color: #F8D521;
+  border-radius: 30px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+#sellButton:hover {
+  background-color: #FFF4B8;
+  cursor: pointer;
+}
+
+#sellButton p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 7px 0px 0px 0px;
+  color: #387B74;
+}
+
+#cancelButtonSell {
+  position: absolute;
+  width: 130px;
+  height: 45px;
+  top: 270px;
+  left: 165px;
+  background-color: #387B74;
+  border-radius: 30px;
+  text-align: center;
+  transition: 0.2s;
+  opacity: 0.5;
+}
+
+#cancelButtonSell p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 7px 0px 0px 0px;
+  color: #F8D521;
+}
+
+.enabledCancelSell {
+  opacity: 1 !important;
+}
+
+.enabledCancelSell:hover {
+  background-color: #2E4A47 !important;
+  cursor: pointer;
+}
+
+#mainPageGraph {
+  position: absolute;
+  width: 650px;
+  height: 335px;
+  top: 55px;
+  background-color: #4C9E95;
+  border-radius: 40px;
+  transition: 1s;
+  z-index: 3;
+}
+
+/*sound button*/
+#musicButton{
+  background-color: #486785;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 51px;
+  top: 50px; 
+  border: none;
+  border-radius: 50px;
+  transition: all .3s ease-out;
+  z-index: 2;
+}
+#musicButton:hover {
+  transform: scale(1.1);
+}
+
+#soundimg, #muteimg{
+  position: absolute;
+  font-size: 20px;
+  left: 13px;
+  top: 14px;
+  color: #ADEDE6;
+  transition: color 2s, opacity 0s;
+}
+
+#muteimg {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/*tutorial*/
+.tut {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.75s;
+  z-index: 4;
+}
+#t1 {
+  top: 170px;
+  left: 170px;
+}
+#t2 {
+  top: 226px;
+  left: 250px;
+}
+#t3 {
+  left: 546px;
+  top: 412px;
+}
+#t4 {
+  left: 335px;
+  top: 250px;
+}
+#t5 {
+  left: 280px;
+  top: 60px;
+}
+#t6 {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 300px;
+  z-index: 5;
+}
+#t7 {
+  left: 252px;
+  top: 290px;
+  visibility: hidden;
+  opacity: 0;
+}
+#t8 {
+  left: 20px;
+  top: 225px;
+  visibility: hidden;
+  opacity: 0;
+}
+#t9 {
+  left: 730px;
+  top: 330px;
+  visibility: hidden;
+  opacity: 0;
+}
+#t10 {
+  left: 790px;
+  top: 280px;
+  visibility: hidden;
+  opacity: 0;
+}
+#t11 {
+  left: 220px;
+  top: 262px;
+  visibility: hidden;
+  opacity: 0;
+}
+#t12 {
+  left: 495px;
+  top: 302px;
+  visibility: hidden;
+  opacity: 0;
+}
+#t13 {
+  left: 251.5px;
+  top: 50px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 11;
+}
+#t14 {
+  left: 592px;
+  top: 265px;
+  visibility: hidden;
+  opacity: 1;
+}
+#check14 {
+  left: 572px;
+  top: 240px;
+  visibility: hidden;
+  opacity: 0;
+  border: none;
+  border-radius: 1000px;
+  background-color: #F8D521;
+  transition: all .3s ease-in-out;
+  width: 50px;
+  height: 50px;
+}
+#check14img {
+  width: 25px;
+}
+#check14:hover {
+  transform: scale(1.2);
+}
+
+#endHover {
+  position: absolute;
+  left: 720px;
+  top: 260px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease-out;
+}
+
+#endTurnButton:hover:disabled ~ #endHover {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0, -10px);
+  transition-delay: 0.3s;
+}
+.tutEndTurnButt:hover ~ #endHover {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.islandChangeArrow {
+  position: absolute; 
+  left: -20px;
+  top: -40px;
+  visibility: hidden;
+}
+
+#individualStockLine {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#theLastOne {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 1.5s;
+  z-index: 4;
+  left: 200%;
+}
+#theLastImage {
+  position: absolute;
+  left: -139px;
+  top: -10px;
+}
+
+#endedWith {
+  color: #C7DFF9;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  z-index: 4;
+  position: absolute;
+  font-weight: 220;
+  left: 405px;
+  top: 275px;
+}
+#netGain {
+  color: #F8D521;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  z-index: 4;
+  position: absolute;
+  font-weight: 300;
+  left: 405px;
+  top: 325px;
+}
+#playAgain {
+  border-radius: 40px;
+  position: absolute;
+  z-index: 4;
+  width: 150px;
+  height: 50px;
+  top: 0px;
+  left: 0px; 
+  font-size: 18px;
+  color: #294560;
+  background-color: #F8D521;
+  border:none;
+  font-family: 'Poppins', sans-serif;
+  top: 400px;
+  left: 240px;
+  transition: all .3s ease-in-out;
+}
+#playAgain:hover {
+  transform: scale(1.1);
+  background-color: #294560;
+  color: #F8D521;
+}
+#link {
+  z-index: 4;
+  font-size: 13px;
+  position: absolute;
+  top: 435px;
+  left: 507px;
+}
+
+#sell {
+  position: absolute;
+  top: 115px;
+  left: 308px;
+  z-index: 4;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#doneSell {
+  position: absolute;
+  top: 388px;
+  left: 478px;
+  background-color: #F8D521;
+  border-radius: 50px;
+  border:none;
+  width: 50px;
+  height: 50px;
+  z-index: 4;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+#doneSell:hover {
+  transform: scale(1.2);
+}
+
+#infoButton{
+  background-color: #486785;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 110px;
+  top: 50px; 
+  border: none;
+  border-radius: 50px;
+  transition: all .3s ease-in-out;
+  text-align: center;
+  z-index: 2;
+}
+
+#infoButton:hover{
+  transform: scale(1.1);
+}
+
+#infoButton i {
+  position: absolute;
+  font-size: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 14px;
+  color: #ADEDE6;
+  transition: color 2s, opacity 0s;
+}  
+
+#infoBox{
+  position: absolute;
+  top:74px;
+  left:294px;
+  z-index: 4;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#linkPP {
+  position: absolute;
+  top:308px;
+  left:85px;
+  font-family: Poppins;
+  font-size: 16px;
+  color: #F8D521;
+}
+
+#closeInfoBox{
+  position: absolute;
+  background-color: #AFF1EA;
+  color: #387B74;
+  font-family:Poppins;
+  width: 105px;
+  height: 44.78px;
+  left: 153px;
+  top: 368px;
+  font-size: 20px;
+  border: none;
+  border-radius: 40px;
+  transition: all .3s ease-in-out;
+}
+
+#closeInfoBox:hover{
+  transform: scale(1.1);
+}
